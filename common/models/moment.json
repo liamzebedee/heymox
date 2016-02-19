@@ -1,0 +1,29 @@
+{
+  "name": "Moment",
+  "plural": "moments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "contentText": {
+      "type": "string",
+      "required": true
+    },
+    "contentImage": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "creator": {
+      "type": "hasOne",
+      "model": "HeymoUser",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

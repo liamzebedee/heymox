@@ -31,5 +31,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "HeymoUser": {
+    "dataSource": "maindb",
+    "public": true
+  },
+  "Moment": {
+    "dataSource": "maindb",
+    "public": true
   }
 }
