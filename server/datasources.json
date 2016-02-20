@@ -3,8 +3,10 @@
     "name": "db",
     "connector": "memory"
   },
-  "maindb": {
-    "name": "maindb",
-    "connector": "postgresql"
+  "actualdb": {
+    "name": "actualdb",
+    "connector": "sqlite",
+    "file_name": "./prod.sqlite3",
+    "debug": false
   }
 }

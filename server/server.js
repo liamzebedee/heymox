@@ -21,6 +21,12 @@ app.start = function() {
 boot(app, __dirname, function(err) {
   if (err) throw err;
 
+  // var DataSource = require('loopback-datasource-juggler').DataSource;
+  // var dataSource = new DataSource(require('../index'), {
+  //   file_name: './dev.sqlite3',
+  //   debug: false
+  // });
+
   // start the server if `$ node server.js`
   if (require.main === module)
     app.start();

@@ -7,13 +7,17 @@
     "validateUpsert": true
   },
   "properties": {
+    "dateCreated": {
+      "type": "date",
+      "required": true
+    },
     "contentText": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "contentImage": {
       "type": "object",
-      "required": true
+      "required": false
     }
   },
   "validations": [],
@@ -21,6 +25,11 @@
     "creator": {
       "type": "hasOne",
       "model": "HeymoUser",
+      "foreignKey": ""
+    },
+    "forwards": {
+      "type": "hasMany",
+      "model": "Forward",
       "foreignKey": ""
     }
   },

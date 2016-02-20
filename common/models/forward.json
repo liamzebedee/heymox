@@ -1,0 +1,46 @@
+{
+  "name": "Forward",
+  "plural": "forwards",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dateCreated": {
+      "type": "date",
+      "required": true
+    },
+    "dateOfForward": {
+      "type": "date",
+      "required": true
+    },
+    "dateReveal": {
+      "type": "date",
+      "required": true
+    },
+    "revealInterval": {
+      "type": "string",
+      "required": true
+    },
+    "isRemo": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "to": {
+      "type": "hasMany",
+      "model": "HeymoUser",
+      "foreignKey": ""
+    },
+    "from": {
+      "type": "hasOne",
+      "model": "HeymoUser",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

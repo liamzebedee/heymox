@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -33,11 +34,19 @@
     "public": false
   },
   "HeymoUser": {
-    "dataSource": "maindb",
+    "dataSource": "actualdb",
     "public": true
   },
   "Moment": {
-    "dataSource": "maindb",
+    "dataSource": "actualdb",
+    "public": true
+  },
+  "Forward": {
+    "dataSource": "actualdb",
+    "public": true
+  },
+  "Contact": {
+    "dataSource": "actualdb",
     "public": true
   }
 }

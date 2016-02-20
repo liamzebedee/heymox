@@ -1,0 +1,26 @@
+{
+  "name": "Contact",
+  "plural": "contacts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "contact": {
+      "type": "belongsTo",
+      "model": "HeymoUser",
+      "scope":{
+        "fields": {"id": true, "username":true}
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "HeymoUser"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

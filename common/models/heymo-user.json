@@ -21,7 +21,9 @@
     "contacts": {
       "type": "hasMany",
       "model": "HeymoUser",
-      "foreignKey": ""
+      "foreignKey": "userId",
+      "through": "Contact",
+      "keyThrough": "contactId"
     }
   },
   "acls": [],
