@@ -12,8 +12,11 @@
     "contact": {
       "type": "belongsTo",
       "model": "HeymoUser",
-      "scope":{
-        "fields": {"id": true, "username":true}
+      "scope": {
+        "fields": {
+          "id": true,
+          "username": true
+        }
       }
     },
     "user": {
@@ -21,6 +24,19 @@
       "model": "HeymoUser"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
