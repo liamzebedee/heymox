@@ -29,7 +29,19 @@
     }
   },
   "validations": [],
-  "relations": {},
+
+  "relations": {
+    "toUsers": {
+      "type": "referencesMany",
+      "model": "HeymoUser",
+      "foreignKey": "toUserIds",
+      "options": {
+        "validate": false,
+        "forceId": false
+      }
+    }
+  },
+
   "acls": [
     {
       "accessType": "*",
