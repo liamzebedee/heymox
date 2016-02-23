@@ -4,7 +4,7 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": false
   },
   "properties": {
     "dateCreated": {
@@ -18,19 +18,18 @@
     "contentImage": {
       "type": "object",
       "required": false
+    },
+    "creatorUserId": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "creator": {
+    "creatorUser": {
       "type": "hasOne",
       "model": "HeymoUser",
-      "foreignKey": ""
-    },
-    "forwards": {
-      "type": "hasMany",
-      "model": "Forward",
-      "foreignKey": ""
+      "foreignKey": "id"
     }
   },
   "acls": [

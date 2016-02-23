@@ -29,18 +29,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "to": {
-      "type": "hasMany",
-      "model": "HeymoUser",
-      "foreignKey": ""
-    },
-    "from": {
-      "type": "hasOne",
-      "model": "HeymoUser",
-      "foreignKey": ""
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",

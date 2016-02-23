@@ -24,8 +24,36 @@
       "foreignKey": "userId",
       "through": "Contact",
       "keyThrough": "contactId"
+    },
+    "createdMoments": {
+      "type": "hasMany",
+      "model": "Moment",
+      "foreignKey": "creatorUserId",
+      "options": {
+        "validate": false
+      }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "contacts"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
