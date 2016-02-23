@@ -1,17 +1,5 @@
 module.exports = function(Moment) {
 	Moment.getCurrentMos = function(userid) {
-  // include: {
-  //   relation: 'owner', // include the owner object
-  //   scope: { // further filter the owner object
-  //     fields: ['username', 'email'], // only show two fields
-  //     include: { // include orders for the owner
-  //       relation: 'orders', 
-  //       scope: {
-  //         where: {orderId: 5} // only select order with id 5
-  //       }
-  //     }
-  //   }
-  // }
 		return Moment.find({
 			fields: ['id', 'dateCreated', 'contentImage', 'contentText'],
 			include: [{

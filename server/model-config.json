@@ -34,19 +34,19 @@
     "public": false
   },
   "HeymoUser": {
-    "dataSource": "actualdb",
+    "dataSource": "mongo",
     "public": true
   },
   "Moment": {
-    "dataSource": "actualdb",
+    "dataSource": "mongo",
     "public": true
   },
   "Forward": {
-    "dataSource": "actualdb",
+    "dataSource": "mongo",
     "public": true
   },
   "Contact": {
-    "dataSource": "actualdb",
+    "dataSource": "mongo",
     "public": true
   }
 }

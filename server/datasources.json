@@ -7,6 +7,10 @@
     "name": "actualdb",
     "connector": "sqlite",
     "file_name": "./prod.sqlite3",
-    "debug": false
+    "debug": true
+  },
+  "mongo": {
+    "name": "mongo",
+    "connector": "mongodb"
   }
 }

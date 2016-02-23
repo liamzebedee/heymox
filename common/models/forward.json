@@ -26,10 +26,13 @@
     "isRemo": {
       "type": "boolean",
       "required": true
+    },
+    "fromUserId": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
-
   "relations": {
     "toUsers": {
       "type": "referencesMany",
@@ -39,9 +42,13 @@
         "validate": false,
         "forceId": false
       }
+    },
+    "fromUser": {
+      "type": "hasOne",
+      "model": "HeymoUser",
+      "foreignKey": "id"
     }
   },
-
   "acls": [
     {
       "accessType": "*",
