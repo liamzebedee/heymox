@@ -11,6 +11,11 @@
   },
   "mongo": {
     "name": "mongo",
-    "connector": "mongodb"
+    "connector": "mongodb",
+    "host": "127.0.0.1", 
+    "database": "devDB", 
+    "username": "", 
+    "password": "", 
+    "port": 27017 
   }
 }

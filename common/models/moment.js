@@ -3,16 +3,16 @@ module.exports = function(Moment) {
 		return Moment.find({
 			fields: ['id', 'dateCreated', 'contentImage', 'contentText'],
 			include: [{
-				fields: ['id', 'dateOfForward', 'dateReveal', 'revealInterval', 'isRemo'],
+				fields: ['id', 'dateCreated', 'dateReveal', 'revealInterval', 'isRemo'],
 				relation: 'forwards',
 				include: [{
-					relation: 'to',
+					relation: 'toUsers',
 					fields: ['id', 'username'],
 					scope: {
 						where: { id: userid }
 					}
 				}, {
-					relation: 'from',
+					relation: 'fromUser',
 					fields: ['id', 'username'],
 				}],
 				order: 'dateReveal DESC'

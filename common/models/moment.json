@@ -18,18 +18,19 @@
     "contentImage": {
       "type": "object",
       "required": false
-    },
-    "creatorUserId": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
   "relations": {
     "creatorUser": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "HeymoUser",
-      "foreignKey": "id"
+      "foreignKey": "creatorUserId"
+    },
+    "forwards": {
+      "type": "hasMany",
+      "model": "Forward",
+      "foreignKey": "momentId"
     }
   },
   "acls": [
