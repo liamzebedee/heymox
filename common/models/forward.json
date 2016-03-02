@@ -29,11 +29,7 @@
     "toUsers": {
       "type": "referencesMany",
       "model": "HeymoUser",
-      "foreignKey": "toUserIds",
-      "options": {
-        "validate": false,
-        "forceId": false
-      }
+      "foreignKey": "toUsersIds"
     },
     "fromUser": {
       "type": "belongsTo",

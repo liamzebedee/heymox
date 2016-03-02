@@ -3,12 +3,6 @@
     "name": "db",
     "connector": "memory"
   },
-  "actualdb": {
-    "name": "actualdb",
-    "connector": "sqlite",
-    "file_name": "./prod.sqlite3",
-    "debug": true
-  },
   "mongo": {
     "name": "mongo",
     "connector": "mongodb",

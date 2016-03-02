@@ -40,6 +40,11 @@
       "options": {
         "validate": false
       }
+    },
+    "receivedForwards": {
+      "type": "hasMany",
+      "model": "Forward",
+      "foreignKey": "toUserId"
     }
   },
   "acls": [
