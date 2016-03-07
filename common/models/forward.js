@@ -1,5 +1,5 @@
 module.exports = function(Forward) {
-	Forward.getCurrentMos = function(userId) {
+	Forward.getCurrentMos = function(userId, sinceTime) {
 		return Forward.find({
 			fields: ['id', 'dateCreated', 'dateReveal', 'revealInterval', 'isRemo', 'fromUserId', 'momentId', 'toUserIds'],
 			include: 
@@ -21,6 +21,9 @@ module.exports = function(Forward) {
 				toUsers: {
 					where: { id: userId }
 				},
+				where: {
+					dateCreated: { gte: sinceTime }
+				}
 			},
 			order: 'dateReveal DESC'
 		});
@@ -30,7 +33,10 @@ module.exports = function(Forward) {
 		'getCurrentMos',
 		{
 			http: {path: '/getCurrentMos', verb: 'get'},
-        	accepts: {arg: 'userId', type: 'string', http: { source: 'query' } },
+        	accepts: [
+        		{arg: 'userId', type: 'string', http: { source: 'query' } },
+        		{arg: 'sinceTime', type: 'Date', http: { source: 'query' } }
+        	],
         	returns: {arg: 'mos', type: 'array'}
 		}
 	)
