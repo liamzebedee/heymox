@@ -1,12 +1,13 @@
 module.exports = function(Forward) {
 	Forward.getCurrentMos = function(userId, sinceTime) {
-		return Forward.find({
+		var params = {
 			fields: ['id', 'dateCreated', 'dateReveal', 'revealInterval', 'isRemo', 'fromUserId', 'momentId', 'toUserIds'],
 			include: 
 			[
 				{
 					relation: 'toUsers',
-					fields: ['id', 'username']
+					fields: ['id', 'username'],
+					where: { id: userId }
 				},
 				{
 					relation: 'fromUser',
@@ -17,16 +18,15 @@ module.exports = function(Forward) {
 					fields: ['dateCreated', 'contentText', 'contentImage']
 				}
 			],
-			scope: {
-				toUsers: {
-					where: { id: userId }
-				},
-				where: {
-					dateCreated: { gte: sinceTime }
-				}
+			where: {
 			},
 			order: 'dateReveal DESC'
-		});
+		}
+		if(sinceTime) {
+			params.where.dateCreated = { gt: sinceTime }
+		}
+
+		return Forward.find(params);
 	}
 
 	Forward.remoteMethod(
